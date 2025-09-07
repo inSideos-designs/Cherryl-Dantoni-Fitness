@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
       <div className="container mx-auto px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
           <div>
-            <img src="/Dantoni-Wellness-Logo.jpeg" alt="Dantoni Wellness Logo" className="h-12 w-auto mb-4 mx-auto md:mx-0" />
+            <img src="/Logo.jpg" alt="Dantoni Wellness Logo" className="h-12 w-auto mb-4 mx-auto md:mx-0" />
             <p className="text-brand-sand">Your journey to heal, release, and thrive starts here.</p>
           </div>
           <div>
