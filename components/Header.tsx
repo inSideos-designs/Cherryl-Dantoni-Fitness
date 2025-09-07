@@ -1,31 +1,71 @@
 
-import React, { useState, useEffect } from 'react';
-import Logo from './Logo';
+import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
+import { Page } from '../types';
+import CTAButton from './CTAButton';
+import { MenuIcon, XIcon } from './icons';
+
+const navLinks = [
+  { name: 'Home', path: Page.Home },
+  { name: 'Services', path: Page.Services },
+  { name: 'About', path: Page.About },
+  { name: 'Contact', path: Page.Contact },
+];
 
 const Header: React.FC = () => {
-  const [scrolled, setScrolled] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 10);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const activeLinkStyle = {
+    color: '#F5CF40',
+    textDecoration: 'underline',
+    textUnderlineOffset: '8px',
+  };
 
   return (
-    <header className={`sticky top-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/90 shadow-md backdrop-blur-sm' : 'bg-transparent'}`}>
-      <nav className="container mx-auto px-6 py-2 flex justify-between items-center">
-        <a href="#hero" aria-label="Back to top">
-          <Logo className="h-20 w-auto" />
-        </a>
-        <a 
-          href="mailto:Cheryl@DantoniWellness.com"
-          className="hidden md:inline-block bg-dw-blue text-white font-sans font-bold py-3 px-6 rounded-full hover:bg-dw-gold transition-colors duration-300 shadow-lg"
-        >
-          Book Your Break Free Call
-        </a>
-      </nav>
+    <header className="bg-brand-blue/95 backdrop-blur-sm sticky top-0 z-50 shadow-md">
+      <div className="container mx-auto px-6 py-3 flex justify-between items-center">
+        <NavLink to={Page.Home}>
+          <img src="/Logo.jpg" alt="Dantoni Wellness Logo" className="h-14 w-auto" />
+        </NavLink>
+        <nav className="hidden md:flex items-center space-x-8">
+          {navLinks.map((link) => (
+            <NavLink
+              key={link.name}
+              to={link.path}
+              className="text-white hover:text-brand-yellow transition-colors duration-300 text-lg"
+              style={({ isActive }) => isActive ? activeLinkStyle : {}}
+            >
+              {link.name}
+            </NavLink>
+          ))}
+        </nav>
+        <div className="hidden md:block">
+            <CTAButton toExternal text="Book a Call" size="sm" />
+        </div>
+        <div className="md:hidden">
+          <button onClick={() => setIsOpen(!isOpen)} className="text-white focus:outline-none">
+            {isOpen ? <XIcon /> : <MenuIcon />}
+          </button>
+        </div>
+      </div>
+      {isOpen && (
+        <div className="md:hidden bg-brand-blue pb-4">
+          <nav className="flex flex-col items-center space-y-4">
+            {navLinks.map((link) => (
+              <NavLink
+                key={link.name}
+                to={link.path}
+                onClick={() => setIsOpen(false)}
+                className="text-white hover:text-brand-yellow transition-colors duration-300 text-lg"
+                style={({ isActive }) => isActive ? activeLinkStyle : {}}
+              >
+                {link.name}
+              </NavLink>
+            ))}
+            <CTAButton toExternal text="Book a Call" size="sm" />
+          </nav>
+        </div>
+      )}
     </header>
   );
 };

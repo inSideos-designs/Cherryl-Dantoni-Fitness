@@ -1,29 +1,30 @@
 
 import React from 'react';
+import { Routes, Route, Outlet } from 'react-router-dom';
 import Header from './components/Header';
-import Hero from './components/Hero';
-import About from './components/About';
-import Method from './components/Method';
-import Services from './components/Services';
-import Testimonials from './components/Testimonials';
-import CTA from './components/CTA';
 import Footer from './components/Footer';
+import HomePage from './pages/HomePage';
+import AboutPage from './pages/AboutPage';
+import ServicesPage from './pages/ServicesPage';
+import ContactPage from './pages/ContactPage';
+import ScrollToTop from './components/ScrollToTop';
 
-const App: React.FC = () => {
+function App() {
   return (
-    <div className="bg-dw-off-white text-dw-dark font-sans">
+    <div className="bg-brand-offwhite text-brand-blue min-h-screen flex flex-col font-sans">
+      <ScrollToTop />
       <Header />
-      <main>
-        <Hero />
-        <About />
-        <Method />
-        <Services />
-        <Testimonials />
-        <CTA />
+      <main className="flex-grow">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+        </Routes>
       </main>
       <Footer />
     </div>
   );
-};
+}
 
 export default App;
