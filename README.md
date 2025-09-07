@@ -1,14 +1,9 @@
-# Cheryl Dantoni Fitness Website
+## Run Locally
 
-Website for Cheryl Dantoni Fitness built with React and Vite.
+**Prerequisites:**  Node.js
 
-## Run locally
 
-- Prerequisites: Node.js
-- Install dependencies: `npm install`
-- Start dev server: `npm run dev`
-
-## Build production
-
-- Build: `npm run build`
-- Preview: `npm run preview`
+1. Install dependencies:
+   `npm install`
+2. Run the app:
+   `npm run dev`

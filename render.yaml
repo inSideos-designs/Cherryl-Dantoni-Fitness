@@ -1,9 +1,0 @@
-services:
-  - type: static_site
-    name: cherryl-dantoni-fitness
-    buildCommand: npm install && npm run build
-    publishPath: dist
-    headers:
-      - path: /**
-        name: Cache-Control
-        value: public, max-age=3600

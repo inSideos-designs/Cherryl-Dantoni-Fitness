@@ -2,20 +2,24 @@
 import React from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
+import About from './components/About';
+import Method from './components/Method';
 import Services from './components/Services';
 import Testimonials from './components/Testimonials';
-import ContactForm from './components/ContactForm';
+import CTA from './components/CTA';
 import Footer from './components/Footer';
 
 const App: React.FC = () => {
   return (
-    <div className="bg-stone-50 text-gray-800">
+    <div className="bg-dw-off-white text-dw-dark font-sans">
       <Header />
       <main>
         <Hero />
+        <About />
+        <Method />
         <Services />
         <Testimonials />
-        <ContactForm />
+        <CTA />
       </main>
       <Footer />
     </div>

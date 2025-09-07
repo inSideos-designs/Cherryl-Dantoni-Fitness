@@ -2,21 +2,29 @@ import React from 'react';
 
 const Hero: React.FC = () => {
   return (
-    <section id="home" className="relative h-screen flex items-center justify-center text-white">
-      <div className="absolute inset-0 bg-black opacity-50 z-10"></div>
-      <img src="https://picsum.photos/1600/1200?image=274" alt="Person running outdoors" className="absolute inset-0 w-full h-full object-cover"/>
-      <div className="relative z-20 text-center p-6">
-        <h1 className="text-5xl md:text-7xl font-bold font-serif leading-tight mb-4 drop-shadow-lg">
-          Unleash Your Strongest Self
+    <section 
+      id="hero" 
+      className="relative min-h-screen flex items-center justify-center text-center text-white -mt-24 pt-24"
+    >
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(https://images.unsplash.com/photo-1473187983305-f615314a4869?q=80&w=1920&auto=format&fit=crop)` }}
+      ></div>
+      <div className="absolute inset-0 bg-dw-blue opacity-60"></div>
+      
+      <div className="relative z-10 px-6 py-20 max-w-3xl mx-auto">
+        <h1 className="font-serif text-5xl md:text-7xl font-bold leading-tight mb-4 animate-fade-in-down">
+          ✨ The Next Chapter Starts With You ✨
         </h1>
-        <p className="text-lg md:text-xl max-w-2xl mx-auto mb-8 drop-shadow-md">
-          Personalized training programs designed to help you crush your goals and transform your life. Welcome to Cheryl Dantoni Fitness.
+        <p className="font-sans text-lg md:text-xl max-w-2xl mx-auto mb-8 animate-fade-in-up">
+          I help women (and men, with a focus on moms 40+) release stress, heal emotional blocks, and reclaim their energy with my proven Health, Mind & Body Method.
         </p>
         <a 
-          href="#services"
-          className="bg-emerald-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-emerald-700 transition-transform hover:scale-105 shadow-lg"
+          href="mailto:Cheryl@DantoniWellness.com"
+          className="inline-block bg-dw-gold text-dw-dark font-sans font-bold py-4 px-8 rounded-full hover:bg-white transition-all duration-300 shadow-xl transform hover:scale-105 animate-fade-in-up"
+          style={{ animationDelay: '0.5s' }}
         >
-          Explore Our Programs
+          ➡️ Book Your Break Free Call Today
         </a>
       </div>
     </section>
