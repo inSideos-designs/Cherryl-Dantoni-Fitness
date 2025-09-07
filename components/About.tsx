@@ -7,7 +7,7 @@ const About: React.FC = () => {
         <div className="flex flex-col md:flex-row items-center gap-12 md:gap-16">
           <div className="w-full md:w-1/3">
             <img 
-              src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop" 
+              src="/IMG_5785.jpg" 
               alt="Cheryl Dantoni" 
               className="rounded-lg shadow-2xl object-cover w-full h-full transform transition-transform duration-500 hover:scale-105"
             />
