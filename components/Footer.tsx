@@ -18,7 +18,7 @@ const InstagramIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-brand-secondary text-brand-background">
+    <footer className="bg-brand-text text-brand-background">
       <div className="container mx-auto px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-1">
